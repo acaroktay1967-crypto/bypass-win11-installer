@@ -84,10 +84,20 @@ Bu yöntem, Git programını kullanmayı bilen kullanıcılar içindir.
    ```
    
    **Not:** Eğer klasör yoksa, önce oluşturun:
-   ```bash
-   mkdir C:\Users\Oktay
+   
+   PowerShell için (önerilen - hata vermez):
+   ```powershell
+   New-Item -Path "C:\Users\Oktay" -ItemType Directory -Force
    cd C:\Users\Oktay
    ```
+   
+   Komut İstemi (CMD) için:
+   ```batch
+   mkdir C:\Users\Oktay 2>nul
+   cd C:\Users\Oktay
+   ```
+   
+   Not: `mkdir` komutu klasör varsa hata verir, bu normaldir ve göz ardı edilebilir.
 
 3. **Repository'yi Klonlayın**
    ```bash
@@ -95,6 +105,12 @@ Bu yöntem, Git programını kullanmayı bilen kullanıcılar içindir.
    ```
    
    Bu komut `bypass-win11-installer` adında bir klasör oluşturacak ve tüm dosyaları oraya kopyalayacaktır.
+   
+   **Not:** Eğer "destination path already exists" hatası alırsanız, repository zaten klonlanmış demektir. Güncellemek için:
+   ```bash
+   cd bypass-win11-installer
+   git pull
+   ```
    
    **Örnek:** `C:\Users\Oktay` içindeyseniz, dosyalar `C:\Users\Oktay\bypass-win11-installer` konumuna kopyalanır.
 
@@ -120,26 +136,89 @@ Bu yöntem, Git programını kullanmayı bilen kullanıcılar içindir.
 
 #### Tam Örnek: C:\Users\Oktay'a Klonlama
 
-Tüm işlem adımları:
+Tüm işlem adımları (PowerShell için):
 
-```bash
-# 1. Klasörü oluştur (eğer yoksa)
-mkdir C:\Users\Oktay
+```powershell
+# 1. Klasörü oluştur (eğer yoksa) - hata vermez
+New-Item -Path "C:\Users\Oktay" -ItemType Directory -Force
 
 # 2. Klasöre git
 cd C:\Users\Oktay
 
-# 3. Repository'yi klonla
-git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+# 3. Repository'yi klonla (eğer zaten klonlanmışsa, güncelle)
+if (Test-Path "bypass-win11-installer") {
+    Write-Host "Repository zaten mevcut. Güncelleniyor..."
+    cd bypass-win11-installer
+    git pull
+} else {
+    Write-Host "Repository klonlanıyor..."
+    git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+    cd bypass-win11-installer
+}
 
-# 4. Klonlanan klasöre gir
+# 4. Dosyaları listele ve kontrol et
+dir
+```
+
+**Basit Versiyon (tek satırlar):**
+```powershell
+# Klasör oluştur (hata vermez)
+New-Item -Path "C:\Users\Oktay" -ItemType Directory -Force | Out-Null
+
+# Klasöre git ve klonla
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git 2>$null || (cd bypass-win11-installer; git pull)
+cd bypass-win11-installer
+dir
+```
+
+**Komut İstemi (CMD) için:**
+```batch
+REM Klasör oluştur (hata mesajı göz ardı edilir)
+mkdir C:\Users\Oktay 2>nul
+
+REM Klasöre git
+cd C:\Users\Oktay
+
+REM Repository'yi klonla veya güncelle
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git 2>nul || cd bypass-win11-installer && git pull
+
+REM Klasöre gir
 cd bypass-win11-installer
 
-# 5. Dosyaları listele ve kontrol et
+REM Dosyaları listele
 dir
 ```
 
 Sonuç: Dosyalar `C:\Users\Oktay\bypass-win11-installer\` konumunda olacaktır.
+
+#### ⚠️ Sık Karşılaşılan Hatalar ve Çözümleri
+
+**Hata 1: "An item with the specified name already exists"**
+```
+mkdir : An item with the specified name C:\Users\Oktay already exists.
+```
+**Çözüm:** Klasör zaten var, bu normaldir. Bu hatayı görmezden gelebilir veya PowerShell'de `New-Item -Force` kullanabilirsiniz:
+```powershell
+New-Item -Path "C:\Users\Oktay" -ItemType Directory -Force
+```
+
+**Hata 2: "destination path already exists and is not an empty directory"**
+```
+fatal: destination path 'bypass-win11-installer' already exists and is not an empty directory.
+```
+**Çözüm:** Repository zaten klonlanmış. Güncellemek için:
+```powershell
+cd C:\Users\Oktay\bypass-win11-installer
+git pull
+```
+
+Veya yeniden klonlamak için önce silin:
+```powershell
+cd C:\Users\Oktay
+Remove-Item -Path "bypass-win11-installer" -Recurse -Force
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+```
 
 #### Git'in Avantajları
 - Güncellemeleri kolayca çekebilirsiniz: `git pull`
@@ -316,10 +395,20 @@ This method is for users familiar with Git.
    ```
    
    **Note:** If the folder doesn't exist, create it first:
-   ```bash
-   mkdir C:\Users\Oktay
+   
+   PowerShell (recommended - won't error):
+   ```powershell
+   New-Item -Path "C:\Users\Oktay" -ItemType Directory -Force
    cd C:\Users\Oktay
    ```
+   
+   Command Prompt (CMD):
+   ```batch
+   mkdir C:\Users\Oktay 2>nul
+   cd C:\Users\Oktay
+   ```
+   
+   Note: `mkdir` will error if folder exists, this is normal and can be ignored.
 
 3. **Clone the Repository**
    ```bash
@@ -329,6 +418,12 @@ This method is for users familiar with Git.
    This command will create a folder named `bypass-win11-installer` and copy all files there.
    
    **Example:** If you're in `C:\Users\Oktay`, files will be copied to `C:\Users\Oktay\bypass-win11-installer`.
+   
+   **Note:** If you get "destination path already exists" error, the repository is already cloned. To update:
+   ```bash
+   cd bypass-win11-installer
+   git pull
+   ```
 
 4. **Enter the Folder**
    ```bash
@@ -352,23 +447,88 @@ This method is for users familiar with Git.
 
 #### Complete Example: Cloning to C:\Users\Oktay
 
-All steps together:
+All steps together (PowerShell):
 
-```bash
-# 1. Create folder (if it doesn't exist)
-mkdir C:\Users\Oktay
+```powershell
+# 1. Create folder (if it doesn't exist) - won't error
+New-Item -Path "C:\Users\Oktay" -ItemType Directory -Force
 
 # 2. Navigate to folder
 cd C:\Users\Oktay
 
-# 3. Clone repository
-git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+# 3. Clone repository (if already cloned, update it)
+if (Test-Path "bypass-win11-installer") {
+    Write-Host "Repository already exists. Updating..."
+    cd bypass-win11-installer
+    git pull
+} else {
+    Write-Host "Cloning repository..."
+    git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+    cd bypass-win11-installer
+}
 
-# 4. Enter cloned folder
+# 4. List and verify files
+dir
+```
+
+**Simple Version (one-liners):**
+```powershell
+# Create folder (won't error)
+New-Item -Path "C:\Users\Oktay" -ItemType Directory -Force | Out-Null
+
+# Navigate and clone
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git 2>$null || (cd bypass-win11-installer; git pull)
+cd bypass-win11-installer
+dir
+```
+
+**Command Prompt (CMD):**
+```batch
+REM Create folder (error message ignored)
+mkdir C:\Users\Oktay 2>nul
+
+REM Navigate to folder
+cd C:\Users\Oktay
+
+REM Clone or update repository
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git 2>nul || cd bypass-win11-installer && git pull
+
+REM Enter folder
 cd bypass-win11-installer
 
-# 5. List and verify files
+REM List files
 dir
+```
+
+Result: Files will be located at `C:\Users\Oktay\bypass-win11-installer\`.
+
+#### ⚠️ Common Errors and Solutions
+
+**Error 1: "An item with the specified name already exists"**
+```
+mkdir : An item with the specified name C:\Users\Oktay already exists.
+```
+**Solution:** Folder already exists, this is normal. You can ignore this error or use PowerShell with `-Force`:
+```powershell
+New-Item -Path "C:\Users\Oktay" -ItemType Directory -Force
+```
+
+**Error 2: "destination path already exists and is not an empty directory"**
+```
+fatal: destination path 'bypass-win11-installer' already exists and is not an empty directory.
+```
+**Solution:** Repository already cloned. To update:
+```powershell
+cd C:\Users\Oktay\bypass-win11-installer
+git pull
+```
+
+Or to re-clone, delete first:
+```powershell
+cd C:\Users\Oktay
+Remove-Item -Path "bypass-win11-installer" -Recurse -Force
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
 ```
 
 Result: Files will be located at `C:\Users\Oktay\bypass-win11-installer\`.

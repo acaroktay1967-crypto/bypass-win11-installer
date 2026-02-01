@@ -35,13 +35,29 @@ cd bypass-win11-installer
 ```
 
 **Belirli Bir Klasöre Klonlama (Örnek: C:\Users\Oktay):**
-```bash
+
+PowerShell için (önerilen):
+```powershell
+# Klasör oluştur (hata vermez)
+New-Item -Path "C:\Users\Oktay" -ItemType Directory -Force | Out-Null
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+```
+
+Komut İstemi (CMD) için:
+```batch
+mkdir C:\Users\Oktay 2>nul
 cd C:\Users\Oktay
 git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
 cd bypass-win11-installer
 ```
 
 Bu komutlar repository'yi `C:\Users\Oktay\bypass-win11-installer` konumuna kopyalayacaktır.
+
+**💡 Not:** Eğer klasör veya repository zaten varsa hata alabilirsiniz. Bu durumda:
+- Klasör hatası: Normal, göz ardı edebilirsiniz
+- Repository hatası: `cd bypass-win11-installer` ve `git pull` ile güncelleyin
 
 #### Yöntem 3: Tek Dosya İndirme
 
@@ -83,13 +99,29 @@ cd bypass-win11-installer
 ```
 
 **Clone to a Specific Folder (Example: C:\Users\Oktay):**
-```bash
+
+PowerShell (recommended):
+```powershell
+# Create folder (won't error)
+New-Item -Path "C:\Users\Oktay" -ItemType Directory -Force | Out-Null
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+```
+
+Command Prompt (CMD):
+```batch
+mkdir C:\Users\Oktay 2>nul
 cd C:\Users\Oktay
 git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
 cd bypass-win11-installer
 ```
 
 These commands will copy the repository to `C:\Users\Oktay\bypass-win11-installer`.
+
+**💡 Note:** If the folder or repository already exists, you may get errors. In that case:
+- Folder error: Normal, can be ignored
+- Repository error: Use `cd bypass-win11-installer` and `git pull` to update
 
 #### Method 3: Download Individual Files
 
