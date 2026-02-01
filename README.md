@@ -460,6 +460,126 @@ Feel free to submit issues or pull requests to improve this tool.
 
 ---
 
+## 🔧 Sorun Giderme / Troubleshooting
+
+### ❓ "Bazı dosyalar eksik, sadece 2-3 dosya görüyorum!" / "Some files are missing, I only see 2-3 files!"
+
+#### 🇹🇷 Türkçe
+
+Eğer klasörde sadece birkaç dosya görüyorsanız (örneğin sadece `bypass_win11.py` ve `README.md`):
+
+**Kontrol Listesi - Olması Gereken Dosyalar:**
+- ✅ README.md (bu dosya)
+- ✅ DOWNLOAD-GUIDE.md
+- ✅ INSTALLATION-GUIDE.md  
+- ✅ bypass-win11-requirements.reg
+- ✅ bypass-installer.bat
+- ✅ bypass-installer.ps1
+- ✅ bypass-installer.py
+- ✅ setup-bypass.bat
+
+**TOPLAM: 8 dosya olmalı!**
+
+**Çözüm 1: Repository'yi Güncelleyin**
+```powershell
+# PowerShell ile
+cd C:\Users\Oktay\bypass-win11-installer
+git pull origin main
+Get-ChildItem  # Dosyaları listele
+```
+
+**Çözüm 2: Doğru Branch'i Kontrol Edin**
+```powershell
+cd C:\Users\Oktay\bypass-win11-installer
+git branch          # Mevcut branch'i gör
+git checkout main   # Ana branch'e geç
+git pull            # Güncellemeleri al
+```
+
+**Çözüm 3: Yeniden İndirin (En Garanti)**
+
+1. Eski klasörü silin:
+```powershell
+Remove-Item -Recurse -Force C:\Users\Oktay\bypass-win11-installer
+```
+
+2. Tekrar klonlayın:
+```powershell
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+```
+
+3. Veya ZIP olarak indirin:
+   - GitHub sayfasında yeşil **"Code"** butonu
+   - **"Download ZIP"** seçeneği
+   - İndirin ve çıkartın
+
+**Çözüm 4: Dosya Sayısını Kontrol Edin**
+```powershell
+cd C:\Users\Oktay\bypass-win11-installer
+(Get-ChildItem -File).Count  # Sonuç: 8 olmalı
+```
+
+#### 🇬🇧 English
+
+If you only see a few files in the folder (e.g., only `bypass_win11.py` and `README.md`):
+
+**Checklist - Required Files:**
+- ✅ README.md (this file)
+- ✅ DOWNLOAD-GUIDE.md
+- ✅ INSTALLATION-GUIDE.md
+- ✅ bypass-win11-requirements.reg
+- ✅ bypass-installer.bat
+- ✅ bypass-installer.ps1
+- ✅ bypass-installer.py
+- ✅ setup-bypass.bat
+
+**TOTAL: 8 files should be present!**
+
+**Solution 1: Update the Repository**
+```powershell
+# Using PowerShell
+cd C:\Users\Oktay\bypass-win11-installer
+git pull origin main
+Get-ChildItem  # List files
+```
+
+**Solution 2: Check the Correct Branch**
+```powershell
+cd C:\Users\Oktay\bypass-win11-installer
+git branch          # See current branch
+git checkout main   # Switch to main branch
+git pull            # Get updates
+```
+
+**Solution 3: Re-download (Most Reliable)**
+
+1. Delete the old folder:
+```powershell
+Remove-Item -Recurse -Force C:\Users\Oktay\bypass-win11-installer
+```
+
+2. Clone again:
+```powershell
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+```
+
+3. Or download as ZIP:
+   - Click green **"Code"** button on GitHub page
+   - Select **"Download ZIP"**
+   - Download and extract
+
+**Solution 4: Verify File Count**
+```powershell
+cd C:\Users\Oktay\bypass-win11-installer
+(Get-ChildItem -File).Count  # Result should be: 8
+```
+
+---
+
 ## 📄 License / Lisans
 
 MIT License - Free to use and modify / Ücretsiz kullanım ve değiştirme

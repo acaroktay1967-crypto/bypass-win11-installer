@@ -375,20 +375,132 @@ GitHub'ı mobil cihazdan kullanıyorsanız:
 
 ### ✅ İndirme Sonrası Ne Yapmalı?
 
-1. **Dosyaları Kontrol Edin**
-   - Tüm dosyaların düzgün indirildiğinden emin olun
-   - Dosya boyutlarını kontrol edin (çok küçükse sorun olabilir)
+#### 📋 ADIM 1: Dosya Kontrolü - ÇOK ÖNEMLİ!
 
-2. **README.md'yi Okuyun**
-   - Kullanım talimatlarını öğrenmek için README dosyasını açın
+**Olması Gereken Dosyalar:**
+
+```
+bypass-win11-installer\
+├── 📄 README.md                          (yaklaşık 16 KB)
+├── 📄 DOWNLOAD-GUIDE.md                  (yaklaşık 25 KB)
+├── 📄 INSTALLATION-GUIDE.md              (yaklaşık 26 KB)
+├── 📄 bypass-win11-requirements.reg      (yaklaşık 217 bytes)
+├── 📄 bypass-installer.bat               (yaklaşık 1.2 KB)
+├── 📄 bypass-installer.ps1               (yaklaşık 6 KB)
+├── 📄 bypass-installer.py                (yaklaşık 9 KB)
+└── 📄 setup-bypass.bat                   (yaklaşık 2.3 KB)
+```
+
+**✅ TOPLAM: 8 dosya olmalı!**
+
+**Dosya Sayısı Kontrolü (PowerShell):**
+```powershell
+cd C:\Users\Oktay\bypass-win11-installer
+(Get-ChildItem -File).Count
+# Sonuç: 8 göstermeli!
+```
+
+**Dosya Sayısı Kontrolü (CMD):**
+```cmd
+cd C:\Users\Oktay\bypass-win11-installer
+dir /b /a-d | find /c /v ""
+REM Sonuç: 8 göstermeli!
+```
+
+#### 🚨 Sadece 2-3 Dosya mı Görüyorsunuz?
+
+Eğer klasörde sadece birkaç dosya varsa (örneğin sadece `bypass_win11.py` ve `README.md`):
+
+**Muhtemel Nedenler:**
+1. 🔸 Eski bir commit/branch indirdiniz
+2. 🔸 Repository tam yüklenmedi
+3. 🔸 Yanlış klasöre bakıyorsunuz
+4. 🔸 Git pull yapmadınız
+
+**Çözüm 1: Git ile Güncelleme (Hızlı)**
+
+```powershell
+cd C:\Users\Oktay\bypass-win11-installer
+git pull origin main
+Get-ChildItem
+```
+
+**Çözüm 2: Doğru Branch'e Geçin**
+
+```powershell
+cd C:\Users\Oktay\bypass-win11-installer
+git branch              # Mevcut branch'i görün
+git checkout main       # Ana branch'e geçin
+git pull                # Güncellemeleri çekin
+Get-ChildItem           # Dosyaları listeleyin
+```
+
+**Çözüm 3: Yeniden İndirin (En Garanti)**
+
+1. Eski klasörü silin:
+```powershell
+Remove-Item -Recurse -Force C:\Users\Oktay\bypass-win11-installer
+```
+
+2. ZIP olarak yeniden indirin:
+   - GitHub sayfasında yeşil **"Code"** butonuna tıklayın
+   - **"Download ZIP"** seçeneğini seçin
+   - İndirin ve çıkartın
+   - 8 dosya olduğunu doğrulayın
+
+3. Veya tekrar klonlayın:
+```powershell
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+(Get-ChildItem -File).Count  # 8 olmalı
+```
+
+**Çözüm 4: Klasör Konumu Kontrolü**
+
+Doğru klasörde olduğunuzdan emin olun:
+
+```powershell
+# Bulunduğunuz konumu göster
+pwd
+
+# Eğer "bypass-win11-installer" içindeyseniz ve hala eksikse,
+# yukarıdaki Çözüm 3'ü deneyin
+```
+
+#### ADIM 2: Dosya Boyutlarını Kontrol Edin
+
+Dosyalar çok küçükse (birkaç byte), indirme başarısız olmuş olabilir:
+
+```powershell
+Get-ChildItem | Format-Table Name, Length
+```
+
+Eğer tüm dosyalar çok küçükse (< 100 byte), yeniden indirin.
+
+#### ADIM 3: README.md'yi Okuyun
+
+1. **README.md'yi Açın**
+   - Kullanım talimatlarını öğrenmek için okuyun
    - Hangi yöntemi kullanacağınıza karar verin
 
-3. **INSTALLATION-GUIDE.md'ye Göz Atın**
-   - Detaylı kurulum adımları için bu rehberi okuyun
+#### ADIM 4: INSTALLATION-GUIDE.md'ye Göz Atın
 
-4. **Dosyaları Güvenli Tutun**
-   - İndirilen dosyaları kolay bulabileceğiniz bir yere kaydedin
-   - Yedek kopya oluşturabilirsiniz
+1. **Detaylı Kurulum Adımları**
+   - Rufus kullanımı
+   - USB oluşturma
+   - Kurulum sırasında bypass dosyalarını kullanma
+
+#### ADIM 5: Dosyaları Güvenli Tutun
+
+1. **Kolay Erişilebilir Bir Yerde Saklayın**
+   - `C:\Users\Oktay\bypass-win11-installer\` önerilen konum
+   - Masaüstü veya Belgeler de olabilir
+
+2. **Yedek Kopya Oluşturun (Önerilen)**
+   ```powershell
+   Copy-Item -Path "C:\Users\Oktay\bypass-win11-installer" -Destination "C:\Users\Oktay\bypass-win11-installer-backup" -Recurse
+   ```
 
 ### 🎯 Önerilen İş Akışı
 
