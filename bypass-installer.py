@@ -34,7 +34,7 @@ def is_admin():
     """Yönetici yetkisi kontrolü / Check for administrator privileges"""
     try:
         return ctypes.windll.shell32.IsUserAnAdmin()
-    except:
+    except Exception:
         return False
 
 def check_platform():
@@ -81,12 +81,12 @@ def verify_registry_values(key_path):
             try:
                 value, _ = winreg.QueryValueEx(key, name)
                 values[name] = value
-            except:
+            except (WindowsError, OSError):
                 values[name] = None
         
         winreg.CloseKey(key)
         return values
-    except:
+    except (WindowsError, OSError):
         return None
 
 def main():
