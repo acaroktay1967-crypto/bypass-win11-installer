@@ -34,7 +34,7 @@ Bu, dosyaları indirmenin en kolay ve en hızlı yoludur.
 #### Adım 3: Download ZIP Seçin
 - Açılan küçük pencerede en altta **"Download ZIP"** seçeneğini göreceksiniz
 - Bu seçeneğe tıklayın
-- Tarayıcınız `bypass-win11-installer-copilot-win11-yukleme.zip` veya benzeri isimde bir dosya indirecek
+- Tarayıcınız `bypass-win11-installer.zip` veya `bypass-win11-installer-copilot-win11-yukleme.zip` isimli bir dosya indirecek
 
 #### Adım 4: ZIP Dosyasını Çıkarın
 1. İndirilen ZIP dosyasını bulun (genellikle "İndirilenler" klasöründe)
@@ -216,7 +216,7 @@ This is the easiest and fastest way to download the files.
 #### Step 3: Select Download ZIP
 - In the small popup window, you'll see **"Download ZIP"** at the bottom
 - Click this option
-- Your browser will download a file named `bypass-win11-installer-copilot-win11-yukleme.zip` or similar
+- Your browser will download a file named `bypass-win11-installer.zip` or `bypass-win11-installer-copilot-win11-yukleme.zip`
 
 #### Step 4: Extract the ZIP File
 1. Locate the downloaded ZIP file (usually in "Downloads" folder)
