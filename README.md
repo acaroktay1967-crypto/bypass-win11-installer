@@ -6,6 +6,86 @@ This tool allows you to bypass TPM 2.0, Secure Boot, RAM, and CPU requirements d
 
 ---
 
+## 📥 Dosyaları Nasıl İndiririm? / How to Download Files?
+
+### 🇹🇷 Türkçe - İndirme Talimatları
+
+Bu repository'deki dosyaları bilgisayarınıza indirmek için 3 farklı yöntem kullanabilirsiniz:
+
+#### Yöntem 1: ZIP Dosyası İndirme (En Kolay - Önerilen)
+
+1. Bu sayfanın üst kısmında yeşil **"Code"** (Kod) butonuna tıklayın
+2. Açılan menüden **"Download ZIP"** seçeneğine tıklayın
+3. İndirilen `bypass-win11-installer-main.zip` dosyasını bilgisayarınızda bir klasöre çıkarın
+4. Çıkarılan klasörde şu dosyaları bulacaksınız:
+   - `bypass-win11-requirements.reg`
+   - `bypass-installer.bat`
+   - `setup-bypass.bat`
+   - `README.md`
+   - `INSTALLATION-GUIDE.md`
+
+#### Yöntem 2: Git ile Klonlama (Gelişmiş Kullanıcılar için)
+
+Eğer bilgisayarınızda Git yüklüyse:
+
+```bash
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+```
+
+#### Yöntem 3: Tek Dosya İndirme
+
+Sadece belirli bir dosyaya ihtiyacınız varsa:
+
+1. İndirmek istediğiniz dosyaya tıklayın (örn: `bypass-win11-requirements.reg`)
+2. Sağ üstteki **"Raw"** (Ham) butonuna tıklayın
+3. Sayfada **sağ tıklayıp** "Farklı Kaydet" veya "Save As" seçeneğini seçin
+4. Dosyayı bilgisayarınıza kaydedin
+
+**💡 İpucu:** Çoğu kullanıcı için en kolay yöntem **Yöntem 1** (ZIP indirme) dir.
+
+---
+
+### 🇬🇧 English - Download Instructions
+
+You can download the files from this repository to your computer using 3 different methods:
+
+#### Method 1: Download ZIP (Easiest - Recommended)
+
+1. Click the green **"Code"** button at the top of this page
+2. Select **"Download ZIP"** from the dropdown menu
+3. Extract the downloaded `bypass-win11-installer-main.zip` file to a folder on your computer
+4. In the extracted folder, you will find:
+   - `bypass-win11-requirements.reg`
+   - `bypass-installer.bat`
+   - `setup-bypass.bat`
+   - `README.md`
+   - `INSTALLATION-GUIDE.md`
+
+#### Method 2: Clone with Git (For Advanced Users)
+
+If you have Git installed on your computer:
+
+```bash
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+```
+
+#### Method 3: Download Individual Files
+
+If you only need a specific file:
+
+1. Click on the file you want to download (e.g., `bypass-win11-requirements.reg`)
+2. Click the **"Raw"** button in the top right
+3. **Right-click** on the page and select "Save As"
+4. Save the file to your computer
+
+**💡 Tip:** For most users, **Method 1** (ZIP download) is the easiest approach.
+
+**📖 Detaylı İndirme Rehberi / Detailed Download Guide:** Daha fazla bilgi için [DOWNLOAD-GUIDE.md](DOWNLOAD-GUIDE.md) dosyasına bakın / For more information, see [DOWNLOAD-GUIDE.md](DOWNLOAD-GUIDE.md)
+
+---
+
 ## 🇹🇷 Türkçe Kullanım Kılavuzu
 
 ### ⚠️ Uyarı
@@ -88,7 +168,10 @@ If running from Windows:
 
 - **bypass-win11-requirements.reg** - Registry file to import during setup / Kurulum sırasında içe aktarılacak registry dosyası
 - **bypass-installer.bat** - Automated batch script / Otomatik batch scripti
+- **setup-bypass.bat** - Advanced setup script for Windows PE / Windows PE için gelişmiş kurulum scripti
 - **README.md** - This file / Bu dosya
+- **INSTALLATION-GUIDE.md** - Detailed installation guide / Detaylı kurulum rehberi
+- **DOWNLOAD-GUIDE.md** - How to download files / Dosyaları nasıl indireceğiniz hakkında rehber
 
 ---
 
