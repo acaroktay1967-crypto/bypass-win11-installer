@@ -214,6 +214,28 @@ If you only need a specific file:
 
 ## 🇹🇷 Türkçe Kullanım Kılavuzu
 
+### 💿 ISO'dan USB Oluşturma (Rufus)
+
+**Eğer Windows 11 ISO'yu indirdiyseniz (örneğin Masaüstüne):**
+
+1. **Rufus'u indirin:** https://rufus.ie
+2. **USB belleği takın** (en az 8 GB)
+3. **Rufus'u çalıştırın** → Yönetici izni verin
+4. **ISO'yu seçin:**
+   - "SEÇIN" butonuna tıklayın
+   - Masaüstünden ISO dosyanızı seçin (örn: `Windows11_Turkish_x64.iso`)
+5. **Ayarları yapın:**
+   - Bölümleme: **GPT** (modern PC) veya **MBR** (eski PC)
+   - Hedef sistem: **UEFI (non CSM)**
+   - Dosya sistemi: **NTFS**
+6. **"BAŞLAT"** butonuna tıklayın → "ISO modunda yaz" seçin
+7. **Bekleyin** (5-15 dakika)
+8. **Bypass dosyalarını USB'ye kopyalayın**
+
+📖 **Detaylı rehber:** [INSTALLATION-GUIDE.md](INSTALLATION-GUIDE.md) dosyasına bakın, "1.1. Rufus ile Windows 11 Kurulum USB'si Oluşturma" bölümünde adım adım anlatım var.
+
+---
+
 ### ⚠️ Uyarı
 Windows 11'i desteklenmeyen donanımda yüklemek, gelecekte güncelleme almama veya uyumluluk sorunları yaşama riskini beraberinde getirebilir. Bu yöntemleri kullanmadan önce riskleri anladığınızdan emin olun.
 

@@ -43,53 +43,123 @@ Rufus, Windows kurulum USB'leri oluşturmak için en popüler ve kolay araçtır
 - En az 8 GB USB bellek (tercihen 16 GB)
 - Windows 11 ISO dosyası
 
+**📍 SİZİN DURUMUNUZ:**
+✅ Windows 11 Türkçe x64 ISO dosyanız Masaüstünde (Desktop) hazır!
+✅ Rufus programını indirdiniz
+⏳ Şimdi USB oluşturma zamanı!
+
 **Adım Adım Rufus Kullanımı:**
+
+**ADIM 0: Hazırlık (SİZİN İÇİN)**
+   - ISO dosyanızın konumunu not edin:
+     ```
+     C:\Users\[KullanıcıAdınız]\Desktop\Windows11_Turkish_x64.iso
+     ```
+     (Dosya adı farklı olabilir, örnek: `Win11_22H2_Turkish_x64.iso`)
+   - USB belleğinizi bilgisayara takın (8 GB veya daha büyük)
+   - USB'deki önemli dosyaları başka yere kopyalayın (SİLİNECEK!)
 
 1. **Rufus'u Çalıştırın**
    - İndirdiğiniz `rufus.exe` dosyasına çift tıklayın
    - Yönetici izni isterse **"Evet"** deyin
 
-2. **USB Belleği Takın**
+2. **USB Belleği Takın ve Seçin**
    - USB belleğinizi bilgisayara takın
-   - **UYARI:** USB'deki tüm veriler silinecek! Önemli dosyalarınızı yedekleyin
+   - Rufus'ta **"Aygıt (Device)"** bölümünden USB belleğinizi seçin
+   - **⚠️ UYARI:** USB'deki TÜM veriler silinecek! Önemli dosyalarınızı yedekleyin
 
-3. **Rufus Ayarları:**
+3. **ISO Dosyasını Seçin (ÖNEMLİ!)**
    
-   - **Aygıt (Device):** USB belleğinizi seçin
    - **Önyükleme seçimi (Boot selection):** "Disk veya ISO kalıbı" seçin
-   - **SEÇIN** butonuna tıklayın ve Windows 11 ISO dosyanızı seçin
+   - **"SEÇIN"** veya **"SELECT"** butonuna tıklayın
+   - Açılan pencerede:
+     1. **Sol taraftan:** "Masaüstü" veya "Desktop" seçin
+     2. Windows 11 ISO dosyanızı bulun (örnek: `Windows11_Turkish_x64.iso`)
+     3. Dosyaya tıklayın
+     4. **"Aç"** veya **"Open"** butonuna tıklayın
+   
+   ✅ Rufus'ta ISO dosya adı görünecek (örnek: `Windows11_Turkish_x64.iso`)
+
+4. **Rufus Ayarları:**
+   
    - **Bölümleme düzeni (Partition scheme):** 
-     - Modern bilgisayarlar için: **GPT**
-     - Eski bilgisayarlar için: **MBR**
-   - **Hedef sistem (Target system):** **UEFI (non CSM)** (veya BIOS için **BIOS or UEFI**)
-   - **Birim etiketi (Volume label):** "WIN11_SETUP" (istediğiniz ismi verebilirsiniz)
-   - **Dosya sistemi (File system):** **NTFS** (önerilen)
+     - Modern bilgisayarlar için (2013 sonrası): **GPT**
+     - Eski bilgisayarlar için (2013 öncesi): **MBR**
+     - **Emin değilseniz:** GPT seçin (çoğu bilgisayar için uygun)
+   
+   - **Hedef sistem (Target system):** 
+     - **UEFI (non CSM)** (modern bilgisayarlar)
+     - veya **BIOS or UEFI** (her ikisi için)
+   
+   - **Birim etiketi (Volume label):** 
+     - "WIN11_TR" veya "WIN11_SETUP" (istediğiniz ismi verebilirsiniz)
+   
+   - **Dosya sistemi (File system):** 
+     - **NTFS** (önerilen, Windows 11 için ideal)
 
-4. **Başlat**
+5. **USB Oluşturmayı Başlat**
    - **"BAŞLAT"** veya **"START"** butonuna tıklayın
-   - Eğer çıkarsa: **"ISO modunda yaz"** seçeneğini seçin (önerilen)
-   - USB'deki verilerin silineceği uyarısını onaylayın
-   - İşlem 5-15 dakika sürebilir
+   
+   - **Eğer soru çıkarsa:**
+     - **"ISO modunda yaz"** (ISO Image mode) → ÖNERİLEN ✅
+     - veya "DD modunda yaz" → Seçmeyin ❌
+   
+   - **Veri silinme uyarısı:**
+     - "USB'deki TÜM veriler silinecek" uyarısını okuyun
+     - **"TAMAM"** veya **"OK"** butonuna tıklayın
+   
+   - **İşlem süresi:** 5-15 dakika
+     - İlerleme çubuğunu izleyin
+     - Bitene kadar USB'yi çıkarmayın!
+   
+   - **İşlem tamamlandığında:** "HAZIR" veya "READY" yazısını göreceksiniz
 
-5. **Bypass Dosyalarını Kopyalayın**
+6. **Bypass Dosyalarını Kopyalayın**
    
    USB oluşturulduktan sonra, bypass dosyalarını USB'ye kopyalayın:
    
+   **Kaynak (Repository dosyaları):**
    ```
-   C:\Users\Oktay\bypass-win11-installer klasöründeki dosyaları
-   USB belleğe kopyalayın (örnek: E:\bypass-win11-installer)
+   C:\Users\Oktay\bypass-win11-installer\
    ```
    
-   Kopyalanacak dosyalar:
+   **Hedef (USB bellek):**
+   ```
+   E:\bypass-win11-installer\
+   ```
+   (USB sürücü harfi farklı olabilir: D:, E:, F: vb.)
+   
+   **Kopyalanacak dosyalar:**
    - `bypass-win11-requirements.reg`
    - `bypass-installer.ps1`
    - `setup-bypass.bat`
    - `README.md` (referans için)
+   
+   **Nasıl kopyalarsınız:**
+   1. Dosya Gezgini'ni açın
+   2. Sol bölmede: `bypass-win11-installer` klasörünü bulun
+   3. Klasörü sağ tıklayın → **Kopyala**
+   4. USB belleğe gidin (örnek: E:)
+   5. Boş alana sağ tıklayın → **Yapıştır**
 
-**💡 İpucu:** 
+**✅ İŞLEM TAMAMLANDI!**
+
+Artık USB belleğinizde:
+- ✅ Windows 11 Türkçe x64 kurulum dosyaları
+- ✅ Bypass araçları
+
+**💡 İpuçları:** 
 - USB'de hem Windows kurulum dosyaları hem de bypass araçları olacak
 - Kurulum sırasında **Shift + F10** ile komut istemine erişebilirsiniz
 - USB sürücü harfini bulmak için: `diskpart` → `list volume`
+- USB'yi güvenli çıkarın: Sistem tepsisinden "USB'yi Güvenli Çıkar"
+
+**🎯 Sonraki Adım:**
+- Bilgisayarı kapatın
+- BIOS'a girin (genellikle F2, F12, Del tuşu)
+- Boot sırasını USB'den başlatacak şekilde ayarlayın
+- Bilgisayarı USB'den başlatın
+- Windows 11 kurulumuna başlayın!
 
 **Rufus Alternatifi:**
 Eğer Rufus kullanmak istemezseniz:
