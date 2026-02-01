@@ -1,5 +1,33 @@
 # Windows 11 Installer Bypass / Windows 11 Yükleyici Gereksinimleri Atlama
 
+⚠️⚠️⚠️ **ÖNEMLİ: DOĞRU BRANCH'İ KULLANIN! / IMPORTANT: USE THE CORRECT BRANCH!** ⚠️⚠️⚠️
+
+🔴 **Eğer sadece 2 dosya (README.md ve bypass_win11_installer.py) görüyorsanız:**
+- ❌ YANLIŞ BRANCH'tesiniz! (main branch - eski/old)
+- ✅ DOĞRU BRANCH: **`copilot/win11-yukleme`** 
+- ✅ Bu branch'te 8 dosya var! / This branch has 8 files!
+
+📍 **NASIL DEĞİŞTİRİLİR? / HOW TO SWITCH?**
+
+**GitHub Web Arayüzü / GitHub Web Interface:**
+1. Sayfanın üstünde "main" yazan dropdown butonunu bulun / Find the "main" dropdown button at the top
+2. "copilot/win11-yukleme" branch'ini seçin / Select "copilot/win11-yukleme" branch
+3. Artık tüm dosyaları göreceksiniz! / Now you'll see all files!
+
+**Git Komut Satırı / Git Command Line:**
+```bash
+git clone -b copilot/win11-yukleme https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+```
+
+**ZIP İndirme / ZIP Download:**
+1. Branch'i "copilot/win11-yukleme" yapın / Switch to "copilot/win11-yukleme"
+2. "Code" → "Download ZIP" tıklayın / Click "Code" → "Download ZIP"
+
+💡 **Bu dosyayı (README.md) tam olarak görebiliyorsanız, zaten doğru branch'tesiniz!**
+💡 **If you can see this file (README.md) completely, you're already on the correct branch!**
+
+---
+
 Bu araç, Windows 11 kurulumu sırasında TPM 2.0, Secure Boot, RAM ve CPU gereksinimlerini atlamanıza olanak tanır.
 
 This tool allows you to bypass TPM 2.0, Secure Boot, RAM, and CPU requirements during Windows 11 installation.

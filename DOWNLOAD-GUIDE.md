@@ -6,6 +6,105 @@ This document explains step-by-step how to download files from this repository t
 
 ---
 
+## ⚠️ ÖNEMLİ: BRANCH BİLGİSİ / IMPORTANT: BRANCH INFORMATION
+
+Bu repository'de **2 branch** var / This repository has **2 branches**:
+
+### 🔴 **main** branch (ESKİ / OLD - ❌ Kullanmayın / Don't use!)
+- Sadece 2 dosya var / Only 2 files
+- Eski sürüm / Old version
+- ❌ **Bu branch'i KULLANMAYIN!** / **DO NOT use this branch!**
+
+### ✅ **copilot/win11-yukleme** branch (YENİ / NEW - ✅ Kullanın / Use this!)
+- 8 dosya var / Has 8 files
+- Tüm bypass araçları / All bypass tools
+- Tam Türkçe/İngilizce dokümantasyon / Full Turkish/English documentation
+- ✅ **Bu branch'i KULLANIN!** / **USE this branch!**
+
+### 🔍 Hangi Branch'teyim? / Which Branch Am I On?
+
+**Eğer bu dosyayı (DOWNLOAD-GUIDE.md) görebiliyorsanız:**
+✅ Doğru branch'tesiniz! (copilot/win11-yukleme)
+
+**Eğer sadece README.md ve bypass_win11_installer.py görüyorsanız:**
+❌ Yanlış branch'tesiniz! (main)
+
+### 📍 Doğru Branch'e Nasıl Geçilir? / How to Switch to Correct Branch?
+
+#### YÖNTEM 1: GitHub Web Arayüzü / GitHub Web Interface (En Kolay / Easiest)
+
+1. GitHub sayfasının üst kısmına bakın / Look at the top of the GitHub page
+2. "main" veya branch adını gösteren dropdown butonunu bulun / Find the dropdown button showing "main" or branch name
+   - 📍 Konum: Repository adının altında, sol tarafta / Location: Below repository name, on the left
+3. Butona tıklayın / Click the button
+4. Açılan menüde "copilot/win11-yukleme" branch'ini seçin / Select "copilot/win11-yukleme" branch in the dropdown
+5. Sayfa yenilenecek ve tüm dosyaları göreceksiniz! / Page will refresh and you'll see all files!
+
+```
+GitHub Sayfası Üst Kısmı / GitHub Page Top:
+┌────────────────────────────────────────────┐
+│ acaroktay1967-crypto / bypass-win11...    │
+│ ┌──────────────┐  ⭐ Star                 │
+│ │ main ▼       │  👁️ Watch    ← Bu dropdown'u tıklayın
+│ └──────────────┘  🍴 Fork                 │    Click this dropdown
+│  📁 Files                                  │
+└────────────────────────────────────────────┘
+
+Açılan Menü / Dropdown Menu:
+┌──────────────────────────────┐
+│ Switch branches/tags         │
+│                              │
+│ 🔍 Find or create a branch   │
+│                              │
+│ Branches                     │
+│ ○ main                       │ ← Kullanmayın / Don't use
+│ ● copilot/win11-yukleme      │ ← BUNU SEÇİN! / SELECT THIS!
+└──────────────────────────────┘
+```
+
+#### YÖNTEM 2: Git Komut Satırı / Git Command Line
+
+**Doğru branch'i doğrudan klonlayın / Clone correct branch directly:**
+```bash
+git clone -b copilot/win11-yukleme https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+```
+
+**Veya mevcut repository'de branch değiştirin / Or switch branch in existing repository:**
+```bash
+cd bypass-win11-installer
+git fetch origin
+git checkout copilot/win11-yukleme
+git pull
+```
+
+#### YÖNTEM 3: ZIP İndirme / ZIP Download
+
+1. GitHub sayfasında **ÖNCE** branch'i "copilot/win11-yukleme" yapın / **FIRST** switch branch to "copilot/win11-yukleme"
+2. **SONRA** "Code" → "Download ZIP" tıklayın / **THEN** click "Code" → "Download ZIP"
+3. ZIP'i indirin ve çıkartın / Download and extract the ZIP
+
+### ✅ Dosya Kontrolü / File Check
+
+İndirdikten sonra **8 dosya** görmelisiniz / After downloading you should see **8 files**:
+
+```
+bypass-win11-installer\
+├── 📄 README.md
+├── 📄 DOWNLOAD-GUIDE.md (bu dosya! / this file!)
+├── 📄 INSTALLATION-GUIDE.md
+├── 📄 bypass-win11-requirements.reg
+├── 📄 bypass-installer.bat
+├── 📄 bypass-installer.ps1
+├── 📄 bypass-installer.py
+└── 📄 setup-bypass.bat
+```
+
+**Eğer sadece 2 dosya varsa:**
+❌ Yanlış branch'i indirdiniz! / You downloaded the wrong branch!
+✅ Yukarıdaki talimatları takip ederek doğru branch'i indirin / Follow instructions above to download correct branch
+
+---
+
 ## 🇹🇷 TÜRKÇE REHBERİ
 
 ### Genel Bakış
