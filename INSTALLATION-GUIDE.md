@@ -34,6 +34,69 @@ Windows 11, Microsoft tarafından belirlenen aşağıdaki minimum sistem gereksi
    - Önemli dosyalarınızın yedeğini alın
    - Kurulum sırasında veri kaybı olabilir
 
+#### 1.1. Rufus ile Windows 11 Kurulum USB'si Oluşturma
+
+Rufus, Windows kurulum USB'leri oluşturmak için en popüler ve kolay araçtır.
+
+**Gereksinimler:**
+- Rufus programı (https://rufus.ie adresinden indirin)
+- En az 8 GB USB bellek (tercihen 16 GB)
+- Windows 11 ISO dosyası
+
+**Adım Adım Rufus Kullanımı:**
+
+1. **Rufus'u Çalıştırın**
+   - İndirdiğiniz `rufus.exe` dosyasına çift tıklayın
+   - Yönetici izni isterse **"Evet"** deyin
+
+2. **USB Belleği Takın**
+   - USB belleğinizi bilgisayara takın
+   - **UYARI:** USB'deki tüm veriler silinecek! Önemli dosyalarınızı yedekleyin
+
+3. **Rufus Ayarları:**
+   
+   - **Aygıt (Device):** USB belleğinizi seçin
+   - **Önyükleme seçimi (Boot selection):** "Disk veya ISO kalıbı" seçin
+   - **SEÇIN** butonuna tıklayın ve Windows 11 ISO dosyanızı seçin
+   - **Bölümleme düzeni (Partition scheme):** 
+     - Modern bilgisayarlar için: **GPT**
+     - Eski bilgisayarlar için: **MBR**
+   - **Hedef sistem (Target system):** **UEFI (non CSM)** (veya BIOS için **BIOS or UEFI**)
+   - **Birim etiketi (Volume label):** "WIN11_SETUP" (istediğiniz ismi verebilirsiniz)
+   - **Dosya sistemi (File system):** **NTFS** (önerilen)
+
+4. **Başlat**
+   - **"BAŞLAT"** veya **"START"** butonuna tıklayın
+   - Eğer çıkarsa: **"ISO modunda yaz"** seçeneğini seçin (önerilen)
+   - USB'deki verilerin silineceği uyarısını onaylayın
+   - İşlem 5-15 dakika sürebilir
+
+5. **Bypass Dosyalarını Kopyalayın**
+   
+   USB oluşturulduktan sonra, bypass dosyalarını USB'ye kopyalayın:
+   
+   ```
+   C:\Users\Oktay\bypass-win11-installer klasöründeki dosyaları
+   USB belleğe kopyalayın (örnek: E:\bypass-win11-installer)
+   ```
+   
+   Kopyalanacak dosyalar:
+   - `bypass-win11-requirements.reg`
+   - `bypass-installer.ps1`
+   - `setup-bypass.bat`
+   - `README.md` (referans için)
+
+**💡 İpucu:** 
+- USB'de hem Windows kurulum dosyaları hem de bypass araçları olacak
+- Kurulum sırasında **Shift + F10** ile komut istemine erişebilirsiniz
+- USB sürücü harfini bulmak için: `diskpart` → `list volume`
+
+**Rufus Alternatifi:**
+Eğer Rufus kullanmak istemezseniz:
+- **Windows Media Creation Tool** (Microsoft'tan)
+- **Ventoy** (birden fazla ISO için)
+- **WoeUSB** (Linux için)
+
 #### 2. Kurulum Süreci
 
 **Seçenek A: Registry Dosyası ile (Önerilen)**
@@ -233,6 +296,69 @@ Windows 11 requires the following minimum system requirements as determined by M
 2. **Backup:**
    - Back up your important files
    - Data loss may occur during installation
+
+#### 1.1. Creating Windows 11 Installation USB with Rufus
+
+Rufus is the most popular and easy tool for creating Windows installation USB drives.
+
+**Requirements:**
+- Rufus program (download from https://rufus.ie)
+- At least 8 GB USB drive (preferably 16 GB)
+- Windows 11 ISO file
+
+**Step-by-Step Rufus Usage:**
+
+1. **Run Rufus**
+   - Double-click the downloaded `rufus.exe` file
+   - Click **"Yes"** if administrator permission is requested
+
+2. **Insert USB Drive**
+   - Insert your USB drive into the computer
+   - **WARNING:** All data on the USB will be erased! Backup important files
+
+3. **Rufus Settings:**
+   
+   - **Device:** Select your USB drive
+   - **Boot selection:** Choose "Disk or ISO image"
+   - Click **SELECT** button and choose your Windows 11 ISO file
+   - **Partition scheme:** 
+     - For modern computers: **GPT**
+     - For older computers: **MBR**
+   - **Target system:** **UEFI (non CSM)** (or **BIOS or UEFI** for BIOS)
+   - **Volume label:** "WIN11_SETUP" (you can use any name)
+   - **File system:** **NTFS** (recommended)
+
+4. **Start**
+   - Click **"START"** button
+   - If prompted: Select **"Write in ISO mode"** (recommended)
+   - Confirm the warning that data on USB will be erased
+   - Process may take 5-15 minutes
+
+5. **Copy Bypass Files**
+   
+   After USB is created, copy bypass files to USB:
+   
+   ```
+   Copy files from C:\Users\Oktay\bypass-win11-installer folder
+   to USB drive (example: E:\bypass-win11-installer)
+   ```
+   
+   Files to copy:
+   - `bypass-win11-requirements.reg`
+   - `bypass-installer.ps1`
+   - `setup-bypass.bat`
+   - `README.md` (for reference)
+
+**💡 Tip:** 
+- USB will have both Windows installation files and bypass tools
+- During installation, access command prompt with **Shift + F10**
+- To find USB drive letter: `diskpart` → `list volume`
+
+**Rufus Alternative:**
+If you don't want to use Rufus:
+- **Windows Media Creation Tool** (from Microsoft)
+- **Ventoy** (for multiple ISOs)
+- **WoeUSB** (for Linux)
 
 #### 2. Installation Process
 
