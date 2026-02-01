@@ -221,10 +221,20 @@ If you only need a specific file:
 
 ### 💿 ISO'dan USB Oluşturma (Rufus)
 
+**⚠️ ÖNEMLİ UYARI: RUFUS, USB'DEKİ TÜM DOSYALARI SİLER!**
+
+```
+🚨 Rufus, USB belleği formatlar!
+🚨 USB'deki TÜM dosyalar silinir!
+🚨 Bu işlem geri alınamaz!
+🚨 Önemli dosyalarınızı ÖNCE yedekleyin!
+```
+
 **Eğer Windows 11 ISO'yu indirdiyseniz (örneğin Masaüstüne):**
 
 1. **Rufus'u indirin:** https://rufus.ie
 2. **USB belleği takın** (en az 8 GB)
+   - ⚠️ USB'deki önemli dosyaları başka yere kopyalayın!
 3. **Rufus'u çalıştırın** → Yönetici izni verin
 4. **ISO'yu seçin:**
    - "SEÇIN" butonuna tıklayın
@@ -234,10 +244,14 @@ If you only need a specific file:
    - Hedef sistem: **UEFI (non CSM)**
    - Dosya sistemi: **NTFS**
 6. **"BAŞLAT"** butonuna tıklayın → "ISO modunda yaz" seçin
+   - ⚠️ "USB'deki veriler silinecek" uyarısını onaylayın
 7. **Bekleyin** (5-15 dakika)
+   - Rufus, USB'yi formatlar ve Windows dosyalarını yazar
+   - Bu NORMAL bir işlemdir!
 8. **Bypass dosyalarını USB'ye kopyalayın**
    - ❗ **ÖNEMLİ:** "Bypass dosyaları" = Bu GitHub repository'sindeki dosyalar!
    - 🚫 **DİKKAT:** ISO dosyasının içine DEĞİL, USB belleğe kopyalayın!
+   - ⏱️ **NE ZAMAN:** Rufus işlemi BİTTİKTEN SONRA!
    - Yani bu sayfadan indirdiğiniz `bypass-win11-installer` klasörünü USB'ye
    - Detaylar için aşağıdaki "📥 Dosyaları Nasıl İndiririm?" bölümüne bakın
 

@@ -51,13 +51,35 @@ Rufus, Windows kurulum USB'leri oluşturmak için en popüler ve kolay araçtır
 **Adım Adım Rufus Kullanımı:**
 
 **ADIM 0: Hazırlık (SİZİN İÇİN)**
+
+   **⚠️⚠️⚠️ ÇOK ÖNEMLİ UYARI ⚠️⚠️⚠️**
+   
+   ```
+   🚨 RUFUS, USB BELLEĞİ FORMATLAR!
+   🚨 USB'DEKİ TÜM DOSYALAR SİLİNİR!
+   🚨 BU İŞLEM GERİ ALINAMAZ!
+   ```
+   
+   **Rufus ne yapar?**
+   - USB belleği tamamen formatlar (FAT32 veya NTFS)
+   - Üzerindeki TÜM dosyaları siler (fotoğraf, video, belge vs.)
+   - Windows kurulum dosyalarını yazar
+   - Bu NORMAL bir davranıştır!
+   
+   **Yapmanız gerekenler:**
+   1. ✅ USB'deki önemli dosyaları MUTLAKA başka yere kopyalayın!
+   2. ✅ Yedekleme yapmadan DEVAM ETMEYİN!
+   3. ✅ Bypass dosyalarını Rufus işlemi BİTTİKTEN SONRA kopyalayın!
+   
+   ---
+   
    - ISO dosyanızın konumunu not edin:
      ```
      C:\Users\[KullanıcıAdınız]\Desktop\Windows11_Turkish_x64.iso
      ```
      (Dosya adı farklı olabilir, örnek: `Win11_22H2_Turkish_x64.iso`)
    - USB belleğinizi bilgisayara takın (8 GB veya daha büyük)
-   - USB'deki önemli dosyaları başka yere kopyalayın (SİLİNECEK!)
+   - **📦 ÖNEMLİ:** USB'deki TÜM dosyaları başka yere yedekleyin!
 
 1. **Rufus'u Çalıştırın**
    - İndirdiğiniz `rufus.exe` dosyasına çift tıklayın
@@ -66,7 +88,17 @@ Rufus, Windows kurulum USB'leri oluşturmak için en popüler ve kolay araçtır
 2. **USB Belleği Takın ve Seçin**
    - USB belleğinizi bilgisayara takın
    - Rufus'ta **"Aygıt (Device)"** bölümünden USB belleğinizi seçin
-   - **⚠️ UYARI:** USB'deki TÜM veriler silinecek! Önemli dosyalarınızı yedekleyin
+   
+   **⚠️⚠️⚠️ SON UYARI ⚠️⚠️⚠️**
+   
+   ```
+   Bu USB'deki TÜM dosyalar SİLİNECEK!
+   
+   Devam etmeden önce:
+   • USB'deki dosyaları yedeklediniz mi? ✓
+   • Doğru USB'yi seçtiniz mi? ✓
+   • Bypass dosyaları SONRA kopyalanacak! ✓
+   ```
 
 3. **ISO Dosyasını Seçin (ÖNEMLİ!)**
    
@@ -113,6 +145,23 @@ Rufus, Windows kurulum USB'leri oluşturmak için en popüler ve kolay araçtır
      - Bitene kadar USB'yi çıkarmayın!
    
    - **İşlem tamamlandığında:** "HAZIR" veya "READY" yazısını göreceksiniz
+   
+   **✅ RUFUS İŞLEMİ TAMAMLANDI!**
+   
+   **Ne oldu?**
+   - ✅ USB bellek formatlandı (tüm eski dosyalar silindi)
+   - ✅ Windows 11 kurulum dosyaları USB'ye yazıldı
+   - ✅ USB artık bootable (önyüklenebilir)
+   
+   **⚠️ ÖNEMLİ BİLGİ:**
+   ```
+   Rufus'un USB'deki dosyaları silmesi NORMALDIR!
+   Bu şekilde çalışması gerekir.
+   Bootable USB oluşturmak için format gereklidir.
+   ```
+   
+   **Şimdi ne yapacaksınız?**
+   → ADIM 6'ya geçin: Bypass dosyalarını USB'ye kopyalayın!
 
 6. **Bypass Dosyalarını Kopyalayın**
    
@@ -213,6 +262,41 @@ Artık USB belleğinizde:
 - Kurulum sırasında **Shift + F10** ile komut istemine erişebilirsiniz
 - USB sürücü harfini bulmak için: `diskpart` → `list volume`
 - USB'yi güvenli çıkarın: Sistem tepsisinden "USB'yi Güvenli Çıkar"
+
+**🆘 "RUFUS USB'DEKİ DOSYALARI SİLDİ!" DİYORSANIZ:**
+
+Bu **NORMAL** bir durumdur! Rufus böyle çalışır:
+
+```
+❓ NEDEN RUFUS DOSYALARI SİLDİ?
+
+✅ CEVAP: Çünkü USB'yi formatlaması gerekiyor!
+
+Rufus bir bootable USB oluşturur. Bunun için:
+1. USB'yi tamamen formatlar (FAT32 veya NTFS)
+2. Önyükleme kayıtları yazar (bootmgr, EFI)
+3. Windows kurulum dosyalarını kopyalar
+
+Bu işlem USB'yi "bootable" (önyüklenebilir) yapar.
+Format OLMADAN bootable USB oluşturulamaz!
+```
+
+**❌ Veri Kaybettiyseniz:**
+- Maalesef Rufus formatladığı için **veri kurtarma mümkün değil**
+- Rufus'tan önce yedek almadıysanız, dosyalar gitti
+- Gelecekte: Önemli dosyaları **MUTLAKA** önceden yedekleyin!
+
+**✅ Bypass Dosyalarını Kaybettiyseniz:**
+- Sorun değil! Bypass dosyalarını **ŞIMDI** kopyalayabilirsiniz
+- C:\Users\Oktay\bypass-win11-installer\ → USB'ye kopyalayın
+- Henüz indirmediyseniz, GitHub'dan tekrar indirin
+- ADIM 6'daki talimatları takip edin
+
+**📋 Özet:**
+1. ✅ Rufus'un dosyaları silmesi NORMAL
+2. ✅ USB şimdi bootable Windows 11 kurulum medyası
+3. ✅ Bypass dosyalarını ŞİMDİ kopyalayın
+4. ✅ Sonraki adım: BIOS ayarları ve kurulum
 
 **🎯 Sonraki Adım:**
 - Bilgisayarı kapatın
