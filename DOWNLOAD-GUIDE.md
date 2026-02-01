@@ -256,17 +256,65 @@ rmdir /s /q "C:\Users\Oktay\bypass-win11-installer"
 4. **"Sil"** veya **"Delete"** seçeneğini seçin
 5. Onay penceresinde **"Evet"** butonuna tıklayın
 
+**Yöntem 4: Mobil Cihazdan (iPhone/Android) Silme**
+Eğer dosyaları mobil cihazınıza indirdiyseniz:
+1. Dosya yöneticisi uygulamasını açın (Dosyalar/Files)
+2. İndirilenler (Downloads) klasörüne gidin
+3. `bypass-win11-installer` klasörünü bulun
+4. Uzun basın ve **"Sil"** seçeneğini seçin
+
 **⚠️ Uyarı:**
 - Bu işlem geri alınamaz! Klasör Geri Dönüşüm Kutusu'na gider.
 - Klasör içinde değişiklik yaptıysanız, önce yedek alın.
 - Silme işlemi birkaç saniye sürebilir (dosya sayısına bağlı).
 
-**💡 Yeniden İndirme:**
-Repository'yi sildikten sonra tekrar klonlamak isterseniz:
+#### ♻️ Silme Sonrası: Temiz Başlangıç
+
+Repository'yi sildiyseniz (tebrikler, temiz başlangıç! 🎉), şimdi ne yapmalısınız:
+
+**Senaryo 1: Yeniden Klonlamak İstiyorsanız**
 ```powershell
+# Temiz klonlama
 cd C:\Users\Oktay
 git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+
+# Dosyaları kontrol et
+dir
 ```
+
+**Senaryo 2: ZIP Dosyası İndirmek İstiyorsanız**
+Eğer Git kullanmak istemiyorsanız, GitHub'dan doğrudan ZIP indirebilirsiniz:
+1. [Repository sayfasına](https://github.com/acaroktay1967-crypto/bypass-win11-installer) gidin
+2. Yeşil **"Code"** butonuna tıklayın
+3. **"Download ZIP"** seçeneğini seçin
+4. İndirilen ZIP'i `C:\Users\Oktay` konumuna çıkarın
+
+**Senaryo 3: Sadece İhtiyacınız Olan Dosyaları İndirin**
+Tüm repository yerine sadece ihtiyacınız olan bypass dosyalarını indirebilirsiniz:
+- `bypass-win11-requirements.reg`
+- `bypass-installer.ps1`
+- `bypass-installer.bat`
+
+(Detaylar için aşağıdaki "Tek Tek Dosya İndirme" bölümüne bakın)
+
+**💡 İpuçları:**
+- **Sık güncelleme yapılıyorsa:** Git clone kullanın (kolay güncelleme)
+- **Tek seferlik kullanım:** ZIP indirin (daha basit)
+- **Minimalist yaklaşım:** Sadece gerekli dosyaları indirin
+- **Mobil cihazdan:** ZIP indirin veya GitHub mobil uygulamasını kullanın
+
+**📱 iPhone/Mobil Cihazlardan İndirme:**
+Eğer iPhone veya başka mobil cihazdan indirdiyseniz:
+1. Dosyaları bilgisayara aktarın (AirDrop, kablo, bulut depolama)
+2. Veya GitHub Desktop uygulamasını kullanın
+3. Veya doğrudan ZIP indirip USB ile aktarın
+
+**✅ Silme İşlemi Tamamlandı mı?**
+Silme işlemini başarıyla tamamladıysanız:
+- ✓ Geri Dönüşüm Kutusu'nu boşaltabilirsiniz (kalıcı silme için)
+- ✓ Yeni klonlama/indirme için yukarıdaki seçeneklerden birini kullanın
+- ✓ USB kurulum için Rufus rehberine geçebilirsiniz (INSTALLATION-GUIDE.md)
 
 ### 📄 Yöntem 3: Tek Tek Dosya İndirme
 
@@ -580,6 +628,97 @@ Result: Files will be located at `C:\Users\Oktay\bypass-win11-installer\`.
 - Easily pull updates: `git pull`
 - Track changes
 - View different branches
+
+#### 🗑️ Deleting Repository (Cleanup)
+
+If you want to completely delete the cloned repository:
+
+**Method 1: Delete with PowerShell (Recommended)**
+```powershell
+# Delete folder completely
+cd C:\Users\Oktay
+Remove-Item -Path "bypass-win11-installer" -Recurse -Force
+
+# Or with full path
+Remove-Item -Path "C:\Users\Oktay\bypass-win11-installer" -Recurse -Force
+```
+
+**Method 2: Delete with Command Prompt (CMD)**
+```batch
+REM Delete folder completely
+cd C:\Users\Oktay
+rmdir /s /q bypass-win11-installer
+
+REM Or with full path
+rmdir /s /q "C:\Users\Oktay\bypass-win11-installer"
+```
+
+**Method 3: Delete with Windows Explorer**
+1. Open File Explorer
+2. Navigate to `C:\Users\Oktay\bypass-win11-installer`
+3. **Right-click** on the folder
+4. Select **"Delete"**
+5. Click **"Yes"** in the confirmation dialog
+
+**Method 4: Delete from Mobile Device (iPhone/Android)**
+If you downloaded files to your mobile device:
+1. Open File Manager app (Files)
+2. Go to Downloads folder
+3. Find `bypass-win11-installer` folder
+4. Long press and select **"Delete"**
+
+**⚠️ Warning:**
+- This action cannot be undone! Folder goes to Recycle Bin.
+- If you made changes in the folder, backup first.
+- Deletion may take a few seconds (depends on file count).
+
+#### ♻️ After Deletion: Fresh Start
+
+If you deleted the repository (congrats on a fresh start! 🎉), here's what to do next:
+
+**Scenario 1: Want to Clone Again**
+```powershell
+# Clean clone
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+
+# Verify files
+dir
+```
+
+**Scenario 2: Want to Download ZIP Instead**
+If you don't want to use Git, download ZIP directly from GitHub:
+1. Go to [repository page](https://github.com/acaroktay1967-crypto/bypass-win11-installer)
+2. Click the green **"Code"** button
+3. Select **"Download ZIP"**
+4. Extract ZIP to `C:\Users\Oktay`
+
+**Scenario 3: Download Only Files You Need**
+Instead of the entire repository, download only the bypass files you need:
+- `bypass-win11-requirements.reg`
+- `bypass-installer.ps1`
+- `bypass-installer.bat`
+
+(See "Download Individual Files" section below for details)
+
+**💡 Tips:**
+- **Frequent updates:** Use Git clone (easy updates)
+- **One-time use:** Download ZIP (simpler)
+- **Minimalist approach:** Download only necessary files
+- **From mobile:** Download ZIP or use GitHub mobile app
+
+**📱 Downloading from iPhone/Mobile Devices:**
+If you downloaded from iPhone or other mobile device:
+1. Transfer files to computer (AirDrop, cable, cloud storage)
+2. Or use GitHub Desktop app
+3. Or download ZIP directly and transfer via USB
+
+**✅ Deletion Complete?**
+If you successfully completed the deletion:
+- ✓ You can empty Recycle Bin (for permanent deletion)
+- ✓ Use one of the options above for new clone/download
+- ✓ Ready to proceed with Rufus guide for USB installation (INSTALLATION-GUIDE.md)
 
 ### 📄 Method 3: Download Individual Files
 
