@@ -89,6 +89,76 @@ Windows 11, Microsoft tarafından belirlenen aşağıdaki minimum sistem gereksi
 5. Script otomatik olarak gerekli ayarları yapacak
 6. Tamamlandığında kuruluma devam edin
 
+**Seçenek D: PowerShell Script (Gelişmiş - Önerilen)**
+
+PowerShell, daha fazla bilgi ve renkli çıktı sunar:
+
+1. Windows'ta PowerShell'i **Yönetici olarak çalıştır**
+2. Script klasörüne gidin:
+   ```powershell
+   cd C:\path\to\bypass-win11-installer
+   ```
+3. Execution Policy'yi geçici olarak atlayarak çalıştırın:
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File bypass-installer.ps1
+   ```
+4. Ekranda şunları göreceksiniz:
+   - Yönetici yetkisi kontrolü
+   - Yapılacak değişikliklerin listesi
+   - Onay istemi (E/H)
+   - Her adımda ilerleme göstergesi
+   - Başarı/hata mesajları (renkli)
+   - Son durumun doğrulanması
+
+**Özellikler:**
+- ✅ 4GB RAM'li bilgisayarlar için özel destek
+- ✅ Renkli terminal çıktısı
+- ✅ Detaylı hata mesajları
+- ✅ Registry değerlerini doğrulama
+- ✅ İşlem sonrası durum raporu
+
+**Seçenek E: Python Script (Çapraz Platform)**
+
+Python yüklüyse (3.6 veya üzeri):
+
+1. Komut İstemi'ni veya PowerShell'i **Yönetici olarak çalıştır**
+2. Script klasörüne gidin:
+   ```bash
+   cd C:\path\to\bypass-win11-installer
+   ```
+3. Python scriptini çalıştırın:
+   ```bash
+   python bypass-installer.py
+   ```
+   veya Python 3 için:
+   ```bash
+   python3 bypass-installer.py
+   ```
+4. Script şunları yapacak:
+   - Platform kontrolü (Windows gerekli)
+   - Yönetici yetkisi kontrolü
+   - Kullanıcı onayı alma
+   - Registry değişikliklerini uygulama
+   - Sonuçları doğrulama ve gösterme
+
+**Özellikler:**
+- ✅ Python 3.6+ uyumlu
+- ✅ 4GB RAM desteği
+- ✅ Renkli ANSI terminal çıktısı
+- ✅ Detaylı hata yönetimi
+- ✅ Başarı/başarısızlık sayacı
+- ✅ Windows dışı platformlarda güvenli hata verme
+
+**Hangi Yöntemi Seçmeliyim?**
+
+| Yöntem | Kolay | Hızlı | Detay | Önerilen |
+|--------|-------|-------|-------|----------|
+| Registry Dosyası | ⭐⭐⭐ | ⭐⭐⭐ | ⭐ | Başlangıç |
+| Manuel | ⭐ | ⭐ | ⭐⭐⭐ | Öğrenme |
+| Batch Script | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | Standart |
+| PowerShell | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | ✅ Evet |
+| Python | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | Gelişmiş |
+
 #### 3. Kurulum Sonrası
 
 Kurulum başarıyla tamamlandıktan sonra:
@@ -109,7 +179,24 @@ C: Evet, çoğu durumda güncellemeleri almaya devam edeceksiniz. Ancak Microsof
 C: TPM, şifreleme ve güvenlik için önemlidir. Eğer hassas verilerle çalışıyorsanız, TPM 2.0 destekli bir sistem kullanmanız önerilir.
 
 **S: Hangi yöntemi seçmeliyim?**
-C: Registry dosyası yöntemi (Seçenek A) en kolay ve hızlısıdır. Batch script (Seçenek C) daha otomatiktir ve hata kontrolü sağlar.
+C: 
+- **Yeni başlayanlar:** Registry dosyası yöntemi (Seçenek A) en kolay ve hızlısıdır.
+- **Daha fazla kontrol isteyenler:** PowerShell scripti (Seçenek D) önerilir - renkli çıktı ve detaylı bilgi sağlar.
+- **Python deneyimi olanlar:** Python scripti (Seçenek E) çapraz platform desteği ve detaylı hata yönetimi sunar.
+- **Batch script:** Seçenek C basit ve otomatiktir, ancak PowerShell kadar detaylı değildir.
+
+**S: 4GB RAM'li bilgisayarımda çalışır mı?**
+C: Evet! Özellikle PowerShell ve Python scriptleri 4GB RAM'li sistemler için özel olarak optimize edilmiştir. BypassRAMCheck registry değeri 4GB'lık sistemlerde bile Windows 11 kurulumunu mümkün kılar.
+
+**S: PowerShell scripti çalışmıyor, ne yapmalıyım?**
+C: PowerShell'i mutlaka "Yönetici olarak çalıştır" seçeneği ile açın. Execution policy hatası alırsanız, scripti şu şekilde çalıştırın:
+```powershell
+powershell -ExecutionPolicy Bypass -File bypass-installer.ps1
+```
+
+**S: Python scripti için hangi modüller gerekli?**
+C: Python scripti sadece standart kütüphane modüllerini kullanır (sys, ctypes, winreg, platform). Ekstra paket kurulumuna gerek yoktur. Python 3.6 veya üzeri sürüm yeterlidir.
+
 
 ---
 
@@ -202,6 +289,76 @@ Windows 11 requires the following minimum system requirements as determined by M
 5. Script will automatically configure necessary settings
 6. When complete, continue with installation
 
+**Option D: PowerShell Script (Advanced - Recommended)**
+
+PowerShell provides more information and colored output:
+
+1. On Windows, open PowerShell **as Administrator**
+2. Navigate to the script folder:
+   ```powershell
+   cd C:\path\to\bypass-win11-installer
+   ```
+3. Run with execution policy bypass:
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File bypass-installer.ps1
+   ```
+4. You will see:
+   - Administrator privilege check
+   - List of changes to be made
+   - Confirmation prompt (Y/N)
+   - Progress indicator for each step
+   - Success/error messages (colored)
+   - Final verification of settings
+
+**Features:**
+- ✅ Special support for 4GB RAM computers
+- ✅ Colored terminal output
+- ✅ Detailed error messages
+- ✅ Registry value verification
+- ✅ Post-operation status report
+
+**Option E: Python Script (Cross-Platform)**
+
+If you have Python installed (3.6 or higher):
+
+1. Open Command Prompt or PowerShell **as Administrator**
+2. Navigate to the script folder:
+   ```bash
+   cd C:\path\to\bypass-win11-installer
+   ```
+3. Run the Python script:
+   ```bash
+   python bypass-installer.py
+   ```
+   or for Python 3:
+   ```bash
+   python3 bypass-installer.py
+   ```
+4. The script will:
+   - Check platform (Windows required)
+   - Check administrator privileges
+   - Request user confirmation
+   - Apply registry changes
+   - Verify and display results
+
+**Features:**
+- ✅ Python 3.6+ compatible
+- ✅ 4GB RAM support
+- ✅ Colored ANSI terminal output
+- ✅ Detailed error handling
+- ✅ Success/failure counter
+- ✅ Safe error handling on non-Windows platforms
+
+**Which Method Should I Choose?**
+
+| Method | Easy | Fast | Detail | Recommended |
+|--------|------|------|--------|-------------|
+| Registry File | ⭐⭐⭐ | ⭐⭐⭐ | ⭐ | Beginners |
+| Manual | ⭐ | ⭐ | ⭐⭐⭐ | Learning |
+| Batch Script | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ | Standard |
+| PowerShell | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | ✅ Yes |
+| Python | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | Advanced |
+
 #### 3. Post-Installation
 
 After successful installation:
@@ -222,7 +379,24 @@ A: Yes, in most cases you will continue to receive updates. However, Microsoft m
 A: TPM is important for encryption and security. If you work with sensitive data, a system with TPM 2.0 support is recommended.
 
 **Q: Which method should I choose?**
-A: The registry file method (Option A) is easiest and fastest. The batch script (Option C) is more automated and provides error checking.
+A:
+- **Beginners:** Registry file method (Option A) is easiest and fastest.
+- **More control:** PowerShell script (Option D) is recommended - provides colored output and detailed information.
+- **Python experience:** Python script (Option E) offers cross-platform support and detailed error handling.
+- **Batch script:** Option C is simple and automated, but not as detailed as PowerShell.
+
+**Q: Will this work on my 4GB RAM computer?**
+A: Yes! The PowerShell and Python scripts are specifically optimized for 4GB RAM systems. The BypassRAMCheck registry value enables Windows 11 installation even on systems with only 4GB RAM.
+
+**Q: PowerShell script won't run, what should I do?**
+A: Make sure to open PowerShell with "Run as Administrator". If you get an execution policy error, run the script like this:
+```powershell
+powershell -ExecutionPolicy Bypass -File bypass-installer.ps1
+```
+
+**Q: What modules are required for the Python script?**
+A: The Python script only uses standard library modules (sys, ctypes, winreg, platform). No additional package installation is required. Python 3.6 or higher is sufficient.
+
 
 ---
 
