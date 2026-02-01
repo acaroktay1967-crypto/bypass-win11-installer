@@ -6,6 +6,80 @@ This tool allows you to bypass TPM 2.0, Secure Boot, RAM, and CPU requirements d
 
 ---
 
+## ⚡ Hızlı Başlangıç: PowerShell ile Klonlama / Quick Start: Clone with PowerShell
+
+### 🇹🇷 Türkçe
+
+**PowerShell'i Yönetici Olarak Açın ve Şu Komutları Çalıştırın:**
+
+```powershell
+# 1. İstediğiniz konuma gidin (örnek: C:\Users\Oktay)
+cd C:\Users\Oktay
+
+# 2. Klasörü oluşturun (varsa hata vermez)
+New-Item -Path "." -Name "bypass-win11-installer" -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null
+
+# 3. Repository'yi klonlayın
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+
+# 4. Klasöre girin
+cd bypass-win11-installer
+
+# 5. Dosyaları listeleyin
+Get-ChildItem
+```
+
+**Tek Komutta (Hızlı):**
+```powershell
+cd C:\Users\Oktay; git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git; cd bypass-win11-installer; ls
+```
+
+**⚠️ Git Yüklü Değil mi?**
+```powershell
+# Git'in yüklü olup olmadığını kontrol edin
+git --version
+
+# Eğer hata alırsanız, Git'i indirin: https://git-scm.com/downloads
+```
+
+---
+
+### 🇬🇧 English
+
+**Open PowerShell as Administrator and Run:**
+
+```powershell
+# 1. Navigate to your desired location (example: C:\Users\Oktay)
+cd C:\Users\Oktay
+
+# 2. Create folder (won't error if exists)
+New-Item -Path "." -Name "bypass-win11-installer" -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null
+
+# 3. Clone repository
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+
+# 4. Enter folder
+cd bypass-win11-installer
+
+# 5. List files
+Get-ChildItem
+```
+
+**One Command (Quick):**
+```powershell
+cd C:\Users\Oktay; git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git; cd bypass-win11-installer; ls
+```
+
+**⚠️ Git Not Installed?**
+```powershell
+# Check if Git is installed
+git --version
+
+# If you get an error, download Git: https://git-scm.com/downloads
+```
+
+---
+
 ## 📥 Dosyaları Nasıl İndiririm? / How to Download Files?
 
 ### 🇹🇷 Türkçe - İndirme Talimatları
