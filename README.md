@@ -28,10 +28,20 @@ Bu repository'deki dosyaları bilgisayarınıza indirmek için 3 farklı yöntem
 
 Eğer bilgisayarınızda Git yüklüyse:
 
+**Genel Kullanım:**
 ```bash
 git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
 cd bypass-win11-installer
 ```
+
+**Belirli Bir Klasöre Klonlama (Örnek: C:\Users\Oktay):**
+```bash
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+```
+
+Bu komutlar repository'yi `C:\Users\Oktay\bypass-win11-installer` konumuna kopyalayacaktır.
 
 #### Yöntem 3: Tek Dosya İndirme
 
@@ -66,10 +76,20 @@ You can download the files from this repository to your computer using 3 differe
 
 If you have Git installed on your computer:
 
+**General Usage:**
 ```bash
 git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
 cd bypass-win11-installer
 ```
+
+**Clone to a Specific Folder (Example: C:\Users\Oktay):**
+```bash
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+cd bypass-win11-installer
+```
+
+These commands will copy the repository to `C:\Users\Oktay\bypass-win11-installer`.
 
 #### Method 3: Download Individual Files
 

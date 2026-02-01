@@ -72,14 +72,31 @@ Bu yöntem, Git programını kullanmayı bilen kullanıcılar içindir.
    - veya PowerShell açın
 
 2. **Klonlamak İstediğiniz Dizine Gidin**
+   
+   **Örnek 1: Masaüstüne klonlama**
    ```bash
    cd C:\Users\KullaniciAdiniz\Desktop
+   ```
+   
+   **Örnek 2: C:\Users\Oktay klasörüne klonlama**
+   ```bash
+   cd C:\Users\Oktay
+   ```
+   
+   **Not:** Eğer klasör yoksa, önce oluşturun:
+   ```bash
+   mkdir C:\Users\Oktay
+   cd C:\Users\Oktay
    ```
 
 3. **Repository'yi Klonlayın**
    ```bash
    git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
    ```
+   
+   Bu komut `bypass-win11-installer` adında bir klasör oluşturacak ve tüm dosyaları oraya kopyalayacaktır.
+   
+   **Örnek:** `C:\Users\Oktay` içindeyseniz, dosyalar `C:\Users\Oktay\bypass-win11-installer` konumuna kopyalanır.
 
 4. **Klasöre Girin**
    ```bash
@@ -90,6 +107,39 @@ Bu yöntem, Git programını kullanmayı bilen kullanıcılar içindir.
    ```bash
    dir
    ```
+   
+   Şu dosyaları görmelisiniz:
+   - bypass-win11-requirements.reg
+   - bypass-installer.bat
+   - bypass-installer.ps1
+   - bypass-installer.py
+   - setup-bypass.bat
+   - README.md
+   - INSTALLATION-GUIDE.md
+   - DOWNLOAD-GUIDE.md
+
+#### Tam Örnek: C:\Users\Oktay'a Klonlama
+
+Tüm işlem adımları:
+
+```bash
+# 1. Klasörü oluştur (eğer yoksa)
+mkdir C:\Users\Oktay
+
+# 2. Klasöre git
+cd C:\Users\Oktay
+
+# 3. Repository'yi klonla
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+
+# 4. Klonlanan klasöre gir
+cd bypass-win11-installer
+
+# 5. Dosyaları listele ve kontrol et
+dir
+```
+
+Sonuç: Dosyalar `C:\Users\Oktay\bypass-win11-installer\` konumunda olacaktır.
 
 #### Git'in Avantajları
 - Güncellemeleri kolayca çekebilirsiniz: `git pull`
@@ -254,14 +304,31 @@ This method is for users familiar with Git.
    - or open PowerShell
 
 2. **Navigate to Desired Directory**
+   
+   **Example 1: Clone to Desktop**
    ```bash
    cd C:\Users\YourUsername\Desktop
+   ```
+   
+   **Example 2: Clone to C:\Users\Oktay folder**
+   ```bash
+   cd C:\Users\Oktay
+   ```
+   
+   **Note:** If the folder doesn't exist, create it first:
+   ```bash
+   mkdir C:\Users\Oktay
+   cd C:\Users\Oktay
    ```
 
 3. **Clone the Repository**
    ```bash
    git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
    ```
+   
+   This command will create a folder named `bypass-win11-installer` and copy all files there.
+   
+   **Example:** If you're in `C:\Users\Oktay`, files will be copied to `C:\Users\Oktay\bypass-win11-installer`.
 
 4. **Enter the Folder**
    ```bash
@@ -272,6 +339,39 @@ This method is for users familiar with Git.
    ```bash
    dir
    ```
+   
+   You should see:
+   - bypass-win11-requirements.reg
+   - bypass-installer.bat
+   - bypass-installer.ps1
+   - bypass-installer.py
+   - setup-bypass.bat
+   - README.md
+   - INSTALLATION-GUIDE.md
+   - DOWNLOAD-GUIDE.md
+
+#### Complete Example: Cloning to C:\Users\Oktay
+
+All steps together:
+
+```bash
+# 1. Create folder (if it doesn't exist)
+mkdir C:\Users\Oktay
+
+# 2. Navigate to folder
+cd C:\Users\Oktay
+
+# 3. Clone repository
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+
+# 4. Enter cloned folder
+cd bypass-win11-installer
+
+# 5. List and verify files
+dir
+```
+
+Result: Files will be located at `C:\Users\Oktay\bypass-win11-installer\`.
 
 #### Git Advantages
 - Easily pull updates: `git pull`
