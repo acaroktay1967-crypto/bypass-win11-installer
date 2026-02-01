@@ -237,7 +237,8 @@ If you only need a specific file:
 7. **Bekleyin** (5-15 dakika)
 8. **Bypass dosyalarını USB'ye kopyalayın**
    - ❗ **ÖNEMLİ:** "Bypass dosyaları" = Bu GitHub repository'sindeki dosyalar!
-   - Yani bu sayfadan indirdiğiniz `bypass-win11-installer` klasörü
+   - 🚫 **DİKKAT:** ISO dosyasının içine DEĞİL, USB belleğe kopyalayın!
+   - Yani bu sayfadan indirdiğiniz `bypass-win11-installer` klasörünü USB'ye
    - Detaylar için aşağıdaki "📥 Dosyaları Nasıl İndiririm?" bölümüne bakın
 
 📖 **Detaylı rehber:** [INSTALLATION-GUIDE.md](INSTALLATION-GUIDE.md) dosyasına bakın, "1.1. Rufus ile Windows 11 Kurulum USB'si Oluşturma" bölümünde adım adım anlatım var.

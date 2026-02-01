@@ -116,6 +116,21 @@ Rufus, Windows kurulum USB'leri oluşturmak için en popüler ve kolay araçtır
 
 6. **Bypass Dosyalarını Kopyalayın**
    
+   **🚫 DİKKAT: ISO DOSYASININ İÇİNE DEĞİL!**
+   
+   ❌ Windows 11 ISO dosyasının içine kopyalamayın!
+   ✅ USB belleğe kopyalayın!
+   
+   **📍 NEREYE KOPYALANIR?**
+   
+   - ❌ `Windows11_Turkish_x64.iso` dosyasının içine → HAYIR!
+   - ✅ USB belleğe (E:, F:, D: gibi) → EVET!
+   
+   **⏱️ NE ZAMAN?**
+   
+   1. ✅ Önce: Rufus ile ISO'yu USB'ye yazdınız
+   2. ✅ Şimdi: Bypass dosyalarını USB'ye kopyalayın
+   
    USB oluşturulduktan sonra, **BU REPOSITORY'DEKİ** bypass dosyalarını USB'ye kopyalayın:
    
    **❓ "Bypass dosyaları" nedir?**
@@ -163,16 +178,29 @@ Rufus, Windows kurulum USB'leri oluşturmak için en popüler ve kolay araçtır
    
    USB'nizde şu yapı oluşacak:
    ```
-   E:\
-   ├── bootmgr
-   ├── sources\
-   ├── efi\
-   └── bypass-win11-installer\  ← BU KLASÖR KOPYALANDI
+   USB Bellek (E:\)
+   │
+   ├── 📁 Windows Kurulum Dosyaları (Rufus tarafından oluşturuldu)
+   │   ├── bootmgr
+   │   ├── sources\
+   │   │   ├── boot.wim
+   │   │   └── install.wim
+   │   ├── efi\
+   │   └── ... (diğer Windows dosyaları)
+   │
+   └── 📁 bypass-win11-installer\  ← SİZ KOPYALADINIZ (ADIM 6)
        ├── bypass-win11-requirements.reg
        ├── bypass-installer.ps1
+       ├── bypass-installer.py
+       ├── bypass-installer.bat
        ├── setup-bypass.bat
        └── README.md
    ```
+   
+   **📊 ÖZET:**
+   - **Rufus** → Windows dosyalarını USB'ye yazdı (bootmgr, sources, efi vb.)
+   - **Siz** → Bypass klasörünü USB'ye kopyaladınız
+   - **Sonuç** → USB'de hem Windows hem bypass dosyaları var
 
 **✅ İŞLEM TAMAMLANDI!**
 
