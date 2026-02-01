@@ -4,6 +4,11 @@ Bu araç, Windows 11 kurulumu sırasında TPM 2.0, Secure Boot, RAM ve CPU gerek
 
 This tool allows you to bypass TPM 2.0, Secure Boot, RAM, and CPU requirements during Windows 11 installation.
 
+**💡 Bu Repository Nedir?**
+- Bu sayfadaki dosyalar, Windows 11'in donanım kontrollerini atlamak için hazırlanmış araçlardır
+- `.reg`, `.bat`, `.ps1`, `.py` uzantılı dosyalar bu araçlardır
+- Önce bu dosyaları bilgisayarınıza indirin, sonra USB'ye kopyalayın
+
 ---
 
 ## ⚡ Hızlı Başlangıç: PowerShell ile Klonlama / Quick Start: Clone with PowerShell
@@ -231,6 +236,9 @@ If you only need a specific file:
 6. **"BAŞLAT"** butonuna tıklayın → "ISO modunda yaz" seçin
 7. **Bekleyin** (5-15 dakika)
 8. **Bypass dosyalarını USB'ye kopyalayın**
+   - ❗ **ÖNEMLİ:** "Bypass dosyaları" = Bu GitHub repository'sindeki dosyalar!
+   - Yani bu sayfadan indirdiğiniz `bypass-win11-installer` klasörü
+   - Detaylar için aşağıdaki "📥 Dosyaları Nasıl İndiririm?" bölümüne bakın
 
 📖 **Detaylı rehber:** [INSTALLATION-GUIDE.md](INSTALLATION-GUIDE.md) dosyasına bakın, "1.1. Rufus ile Windows 11 Kurulum USB'si Oluşturma" bölümünde adım adım anlatım var.
 

@@ -116,31 +116,63 @@ Rufus, Windows kurulum USB'leri oluşturmak için en popüler ve kolay araçtır
 
 6. **Bypass Dosyalarını Kopyalayın**
    
-   USB oluşturulduktan sonra, bypass dosyalarını USB'ye kopyalayın:
+   USB oluşturulduktan sonra, **BU REPOSITORY'DEKİ** bypass dosyalarını USB'ye kopyalayın:
    
-   **Kaynak (Repository dosyaları):**
+   **❓ "Bypass dosyaları" nedir?**
+   
+   Bu, indirdiğiniz/klonladığınız `bypass-win11-installer` repository'sindeki dosyalardır.
+   Yani **GitHub'dan indirdiğiniz bu proje dosyaları**!
+   
+   **📂 Kaynak Konum (Repository dosyaları - SİZİN BİLGİSAYARINIZDA):**
    ```
    C:\Users\Oktay\bypass-win11-installer\
    ```
    
-   **Hedef (USB bellek):**
+   Bu klasörde şu dosyaları bulacaksınız:
+   - ✅ `bypass-win11-requirements.reg` → Registry dosyası
+   - ✅ `bypass-installer.ps1` → PowerShell scripti
+   - ✅ `bypass-installer.py` → Python scripti
+   - ✅ `bypass-installer.bat` → Batch scripti
+   - ✅ `setup-bypass.bat` → Kurulum scripti
+   - ✅ `README.md` → Kullanım rehberi
+   
+   **🎯 Hedef Konum (USB bellek):**
    ```
    E:\bypass-win11-installer\
    ```
    (USB sürücü harfi farklı olabilir: D:, E:, F: vb.)
    
-   **Kopyalanacak dosyalar:**
-   - `bypass-win11-requirements.reg`
-   - `bypass-installer.ps1`
-   - `setup-bypass.bat`
-   - `README.md` (referans için)
+   **💡 Eğer bu dosyaları henüz indirmediyseniz:**
    
-   **Nasıl kopyalarsınız:**
-   1. Dosya Gezgini'ni açın
-   2. Sol bölmede: `bypass-win11-installer` klasörünü bulun
-   3. Klasörü sağ tıklayın → **Kopyala**
+   Bu dosyalar GitHub'daki bu repository'de bulunuyor. İndirmek için:
+   
+   - **Yöntem 1:** [README.md](README.md) dosyasındaki "📥 Dosyaları Nasıl İndiririm?" bölümüne bakın
+   - **Yöntem 2:** Bu sayfanın üstündeki yeşil "Code" → "Download ZIP" ile indirin
+   - **Yöntem 3:** Git ile klonlayın: `git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git`
+   
+   **📋 Nasıl Kopyalarsınız:**
+   
+   1. **Dosya Gezgini**'ni açın (Windows tuşu + E)
+   2. Sol bölmede: `C:\Users\Oktay\bypass-win11-installer` klasörünü bulun
+      - Veya nereye indirdiyseniz oraya gidin
+   3. **Tüm klasörü** sağ tıklayın → **Kopyala** (veya Ctrl+C)
    4. USB belleğe gidin (örnek: E:)
-   5. Boş alana sağ tıklayın → **Yapıştır**
+   5. Boş alana sağ tıklayın → **Yapıştır** (veya Ctrl+V)
+   
+   **✅ Sonuç:**
+   
+   USB'nizde şu yapı oluşacak:
+   ```
+   E:\
+   ├── bootmgr
+   ├── sources\
+   ├── efi\
+   └── bypass-win11-installer\  ← BU KLASÖR KOPYALANDI
+       ├── bypass-win11-requirements.reg
+       ├── bypass-installer.ps1
+       ├── setup-bypass.bat
+       └── README.md
+   ```
 
 **✅ İŞLEM TAMAMLANDI!**
 
