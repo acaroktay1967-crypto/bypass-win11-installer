@@ -225,6 +225,49 @@ git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
 - Değişiklikleri takip edebilirsiniz
 - Farklı dalları (branches) görebilirsiniz
 
+#### 🗑️ Repository'yi Silme (Temizleme)
+
+Eğer klonlanmış repository'yi tamamen silmek isterseniz:
+
+**Yöntem 1: PowerShell ile Silme (Önerilen)**
+```powershell
+# Klasörü tamamen sil
+cd C:\Users\Oktay
+Remove-Item -Path "bypass-win11-installer" -Recurse -Force
+
+# Veya tam yol ile
+Remove-Item -Path "C:\Users\Oktay\bypass-win11-installer" -Recurse -Force
+```
+
+**Yöntem 2: Komut İstemi (CMD) ile Silme**
+```batch
+REM Klasörü tamamen sil
+cd C:\Users\Oktay
+rmdir /s /q bypass-win11-installer
+
+REM Veya tam yol ile
+rmdir /s /q "C:\Users\Oktay\bypass-win11-installer"
+```
+
+**Yöntem 3: Windows Explorer ile Silme**
+1. Dosya Gezgini'ni açın
+2. `C:\Users\Oktay\bypass-win11-installer` klasörüne gidin
+3. Klasöre **sağ tıklayın**
+4. **"Sil"** veya **"Delete"** seçeneğini seçin
+5. Onay penceresinde **"Evet"** butonuna tıklayın
+
+**⚠️ Uyarı:**
+- Bu işlem geri alınamaz! Klasör Geri Dönüşüm Kutusu'na gider.
+- Klasör içinde değişiklik yaptıysanız, önce yedek alın.
+- Silme işlemi birkaç saniye sürebilir (dosya sayısına bağlı).
+
+**💡 Yeniden İndirme:**
+Repository'yi sildikten sonra tekrar klonlamak isterseniz:
+```powershell
+cd C:\Users\Oktay
+git clone https://github.com/acaroktay1967-crypto/bypass-win11-installer.git
+```
+
 ### 📄 Yöntem 3: Tek Tek Dosya İndirme
 
 Sadece belirli dosyalara ihtiyacınız varsa bu yöntemi kullanın.
