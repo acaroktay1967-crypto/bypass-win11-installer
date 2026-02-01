@@ -123,6 +123,41 @@ Windows'tan çalıştırıyorsanız:
 3. Ekrandaki talimatları izleyin
 4. Windows 11 kurulumunu başlatın
 
+### Yöntem 4: PowerShell Script (Önerilen - Gelişmiş)
+
+PowerShell scripti daha fazla bilgi ve renklendirme sağlar:
+
+1. `bypass-installer.ps1` dosyasına sağ tıklayın
+2. **PowerShell ile çalıştır** veya **Yönetici olarak çalıştır** seçin
+3. Komut satırında şunu yazabilirsiniz:
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File bypass-installer.ps1
+   ```
+4. Ekrandaki talimatları izleyin
+
+**Not:** 4GB RAM'li bilgisayarlar için özel olarak optimize edilmiştir.
+
+### Yöntem 5: Python Script (Çapraz Platform)
+
+Python yüklüyse (3.6 veya üzeri):
+
+1. Komut İstemi'ni **Yönetici olarak çalıştır**
+2. Script klasörüne gidin:
+   ```bash
+   cd bypass-win11-installer
+   ```
+3. Python scriptini çalıştırın:
+   ```bash
+   python bypass-installer.py
+   ```
+4. Ekrandaki talimatları izleyin
+
+**Özellikler:**
+- ✅ 4GB RAM desteği
+- ✅ Renkli terminal çıktısı
+- ✅ Detaylı hata mesajları
+- ✅ Otomatik yönetici kontrolü
+
 ---
 
 ## 🇬🇧 English Usage Guide
@@ -162,12 +197,49 @@ If running from Windows:
 3. Follow the on-screen instructions
 4. Start Windows 11 installation
 
+### Method 4: PowerShell Script (Recommended - Advanced)
+
+PowerShell script provides more information and colored output:
+
+1. Right-click on `bypass-installer.ps1`
+2. Select **Run with PowerShell** or **Run as administrator**
+3. Or run from command line:
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File bypass-installer.ps1
+   ```
+4. Follow the on-screen instructions
+
+**Note:** Specially optimized for computers with 4GB RAM.
+
+### Method 5: Python Script (Cross-Platform)
+
+If you have Python installed (3.6 or higher):
+
+1. Open Command Prompt **as Administrator**
+2. Navigate to the script folder:
+   ```bash
+   cd bypass-win11-installer
+   ```
+3. Run the Python script:
+   ```bash
+   python bypass-installer.py
+   ```
+4. Follow the on-screen instructions
+
+**Features:**
+- ✅ 4GB RAM support
+- ✅ Colored terminal output
+- ✅ Detailed error messages
+- ✅ Automatic administrator check
+
 ---
 
 ## 📁 Files Included / Dosyalar
 
 - **bypass-win11-requirements.reg** - Registry file to import during setup / Kurulum sırasında içe aktarılacak registry dosyası
 - **bypass-installer.bat** - Automated batch script / Otomatik batch scripti
+- **bypass-installer.ps1** - PowerShell script with enhanced features / Gelişmiş özelliklerle PowerShell scripti
+- **bypass-installer.py** - Python script (cross-platform) / Python scripti (çapraz platform)
 - **setup-bypass.bat** - Advanced setup script for Windows PE / Windows PE için gelişmiş kurulum scripti
 - **README.md** - This file / Bu dosya
 - **INSTALLATION-GUIDE.md** - Detailed installation guide / Detaylı kurulum rehberi
